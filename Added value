@@ -1,0 +1,37 @@
+duration = pulseIn(12,HIGH);
+
+// telling pin 11 to read the sensor
+
+inches = duration / 74/ 2;
+
+Serial.println(inches);
+
+delay(10);
+
+if(inches < 5){
+
+digitalWrite(7,LOW);
+digitalWrite(8,HIGH);
+
+}
+
+if(inches > 5){
+
+digitalWrite(7,HIGH);
+digitalWrite(8,LOW);
+
+
+//soundAlarm(3); // Sound alarm (n) times
+
+
+void soundAlarm(int c)｛
+for (x=0 ; x<c; x++) { //This controls the number of times it sounds
+
+tone(buzzerPin, 1000, 1000); // High tone （ pin, the tone, how long)
+
+delay(1000); // delay for 1 second
+
+tone(buzzerPin, 800, 1000); // Low tone (pin, the tone, how long)
+
+delay(1000); //delay for 1 second
+｝
