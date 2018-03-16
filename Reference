@@ -1,0 +1,52 @@
+// VARIABLES
+int buzzerPin = 3; // the alarm buzzer pin
+
+int x = 0; // variable used for counting
+
+///////////////SETUP//////////////
+
+void setup() { // this section just runs once.
+
+pinMode(buzzerPin, OUTPUT);
+
+}
+
+/////////// soundAlarm() ////////////
+
+void soundAlarm(int cnt) { // this function just makes an alarm sound
+
+for (x=0 ; x<cnt; c++) { //This controls the number of times it sounds
+
+tone(buzzerPin, 1000, 1000); // High tone (arduino pin, the tone, how long)
+
+delay(1000); // delay for 1 second
+
+tone(buzzerPin, 800, 1000); // Low tone (arduino pin, the tone, how long)
+
+delay(1000); //delay for 1 second
+
+}
+
+}
+
+//////////// loop() //////////////
+
+void loop() { // This is the main program loop
+
+soundAlarm(3); // Sound alarm (n) times
+
+delay(10000); // wait for ten seconds, then go to top of the loop
+
+}
+
+
+
+// digitalWrite(11,HIGH);
+
+delayMicroseconds(5);
+
+digitalWrite(11,LOW);
+
+duration = pulseIn(12,HIGH); 
+
+//Code to read the sensors
